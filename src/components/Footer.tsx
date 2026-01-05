@@ -82,9 +82,13 @@ const Footer: React.FC = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcOXvJuxajDPVtOQEPl2g9xKYB81FO9_RfEsQpz7jajvghzA/viewform?usp=publish-editor"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                                    >
                                     {t.feedback}
-                                </Link>
+                                </a>
                             </li>
                             <li>
                                 <div className="flex items-center gap-2 text-muted-foreground text-sm">
