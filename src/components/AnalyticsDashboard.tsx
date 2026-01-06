@@ -1,39 +1,45 @@
-// src/components/Analytics.tsx
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-const Analytics: React.FC = () => {
-  const [visitors, setVisitors] = useState(0);
-  const [activeUsers, setActiveUsers] = useState(0);
+const AnalyticsDashboard: React.FC = () => {
+  const [data, setData] = useState({
+    users: 0,
+    visits: 0,
+    sales: 0,
+  });
 
-  // Simulate fetching analytics data
   useEffect(() => {
-    // Replace this with real API calls if available
-    const interval = setInterval(() => {
-      setVisitors((prev) => prev + Math.floor(Math.random() * 5));
-      setActiveUsers(Math.floor(Math.random() * 20));
-    }, 3000);
-
-    return () => clearInterval(interval);
+    // Dummy fetch or real API call
+    setTimeout(() => {
+      setData({
+        users: 1200,
+        visits: 4500,
+        sales: 320,
+      });
+    }, 500);
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-60 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 text-sm md:text-base font-medium transition-all">
-      <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">
-        📊 Analytics Dashboard
-      </h3>
-      <div className="flex justify-between mb-1">
-        <span>👥 Visitors:</span>
-        <span>{visitors}</span>
-      </div>
-      <div className="flex justify-between">
-        <span>🟢 Active Users:</span>
-        <span>{activeUsers}</span>
-      </div>
-      <div className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-        Updated in real-time
+    <div className="container mx-auto py-8 px-4">
+      <h1 className="text-3xl font-bold mb-6">Analytics Dashboard</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white dark:bg-gray-800 shadow p-6 rounded-lg text-center">
+          <h2 className="text-xl font-semibold">Total Users</h2>
+          <p className="text-4xl mt-2">{data.users}</p>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 shadow p-6 rounded-lg text-center">
+          <h2 className="text-xl font-semibold">Total Visits</h2>
+          <p className="text-4xl mt-2">{data.visits}</p>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 shadow p-6 rounded-lg text-center">
+          <h2 className="text-xl font-semibold">Total Sales</h2>
+          <p className="text-4xl mt-2">{data.sales}</p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Analytics;
+export default AnalyticsDashboard;
