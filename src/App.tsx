@@ -24,6 +24,7 @@ import Checkout from '@/components/Checkout';
 import Auth from '@/components/Auth';
 import Profile from '@/components/Profile';
 import NotFound from "./pages/NotFound";
+import AnalyticsDashboard from "./pages/AnalyticsDashboard";
 
 const queryClient = new QueryClient();
 
@@ -121,6 +122,7 @@ const App = () => {
                       <Route path="/nearby" element={<NearbyHospitals />} />
                       <Route path="/cart" element={<Cart />} />
                       <Route path="/checkout" element={<Checkout />} />
+                      <Route path="/analytics" element={<AnalyticsDashboard />} />
                       <Route path="/auth" element={<Auth />} />
                       <Route path="/profile" element={<Profile />} />
                       <Route path="*" element={<NotFound />} />
